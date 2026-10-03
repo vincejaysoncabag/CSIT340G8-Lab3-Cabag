@@ -29,29 +29,44 @@ const Total = ({ parts }) => {
   )
 }
 
-const App = () => {
-  const course = 'CSIT340'
+const Footer = ({ name, courseCode, section }) => {
+  return (
+    <footer>
+      {name} - {courseCode} - {section}
+    </footer>
+  )
+}
 
-  const parts = [
-    {
-      name: 'CSIT340',
-      exercises: 5
-    },
-    {
-      name: 'CSIT321',
-      exercises: 3
-    },
-    {
-      name: 'IT317',
-      exercises: 4
-    }
-  ]
+const App = () => {
+  const course = {
+    name: 'CSIT340',
+    parts: [
+      {
+        name: 'CSIT340',
+        exercises: 5
+      },
+      {
+        name: 'CSIT321',
+        exercises: 3
+      },
+      {
+        name: 'IT317',
+        exercises: 4
+      }
+    ]
+  }
 
   return (
     <div>
-      <Header course={course} />
-      <Content parts={parts} />
-      <Total parts={parts} />
+      <Header course={course.name} />
+      <Content parts={course.parts} />
+      <Total parts={course.parts} />
+
+      <Footer
+        name="Vince Jayson C. Cabag"
+        courseCode="CSIT340"
+        section="G8"
+      />
     </div>
   )
 }
