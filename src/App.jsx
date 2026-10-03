@@ -20,6 +20,15 @@ const Content = ({ parts }) => {
   )
 }
 
+const Total = ({ parts }) => {
+  return (
+    <p>
+      Number of exercises{' '}
+      {parts[0].exercises + parts[1].exercises + parts[2].exercises}
+    </p>
+  )
+}
+
 const App = () => {
   const course = 'CSIT340'
 
@@ -42,6 +51,7 @@ const App = () => {
     <div>
       <Header course={course} />
       <Content parts={parts} />
+      <Total parts={parts} />
     </div>
   )
 }
